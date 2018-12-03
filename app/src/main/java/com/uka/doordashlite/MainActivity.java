@@ -89,6 +89,12 @@ public class MainActivity extends AppCompatActivity implements BaseView {
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        subscribe.dispose();
+    }
+
+    @Override
     public void showTasks(@NonNull List<Restaurant> list) {
         listAdapter.replaceDatabaset(list);
     }
